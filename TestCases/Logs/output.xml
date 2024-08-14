@@ -1,0 +1,1069 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20230604 17:46:42.256" rpa="false" schemaversion="3">
+<suite id="s1" name="Main file" source="/home/vvdn13302/Desktop/VVDN_Icon/TestCases/Main_file.robot">
+<kw name="Open My Browser" library="inital_setup" type="SETUP">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230604 17:46:42.413" level="INFO">Opening browser 'Chrome' to base url 'https://vvdnicon.com/login'.</msg>
+<status status="PASS" starttime="20230604 17:46:42.413" endtime="20230604 17:46:58.948"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230604 17:46:58.949" endtime="20230604 17:46:59.053"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${verify_login_page}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230604 17:46:59.054" endtime="20230604 17:47:00.530"/>
+</kw>
+<status status="PASS" starttime="20230604 17:46:42.412" endtime="20230604 17:47:00.531"/>
+</kw>
+<test id="s1-t1" name="Tc_1 Login" line="10">
+<kw name="Login_to_dashboard" library="Login_kewards">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${UserName_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:00.535" endtime="20230604 17:47:00.569"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${UserName_xpath}</arg>
+<arg>${User_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:00.569" level="INFO">Typing text 'ajit.dhumal@vvdntech.in' into text field '//input[@id="username-input"]'.</msg>
+<status status="PASS" starttime="20230604 17:47:00.569" endtime="20230604 17:47:00.717"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${Passward_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:00.717" endtime="20230604 17:47:00.742"/>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<arg>${Passward_xpath}</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:00.743" level="INFO">Typing password into text field '//input[@id="password-input"]'.</msg>
+<msg timestamp="20230604 17:47:00.806" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230604 17:47:00.877" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230604 17:47:00.743" endtime="20230604 17:47:00.878"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Login_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:00.878" level="INFO">Clicking element '//span[text()="Login"]'.</msg>
+<status status="PASS" starttime="20230604 17:47:00.878" endtime="20230604 17:47:00.976"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${verify_login_page}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230604 17:47:00.977" endtime="20230604 17:47:00.994"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:00.534" endtime="20230604 17:47:00.994"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:00.531" endtime="20230604 17:47:00.995"/>
+</test>
+<test id="s1-t2" name="Tc_2 side nevigation panel" line="13">
+<kw name="Side_nevigational_panel_table" library="Side_nevigation_panel">
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230604 17:47:10.999" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230604 17:47:00.998" endtime="20230604 17:47:10.999"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${side_panal_table_xpath}</arg>
+<arg>1000</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:11.000" endtime="20230604 17:47:11.038"/>
+</kw>
+<kw name="Get WebElements" library="Selenium2Library">
+<var>${name}</var>
+<arg>${side_panal_table_xpath}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230604 17:47:11.051" level="INFO">${name} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="6ad2bd4580f2d872d42fe8635f34ea86", element="1bcb0cb9-728f-4c12-888b-1575a3bd93bd")&gt;]</msg>
+<status status="PASS" starttime="20230604 17:47:11.038" endtime="20230604 17:47:11.051"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${result}</var>
+<arg>${name}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:11.119" level="INFO">${result} = Home
+Customers
+Assets
+Device profiles
+Devices
+Rule chains
+Dashboards
+Widgets Library
+OTA updates
+Entity Views
+Edge instances
+Edge management
+Audit Logs
+Api Usage
+System Settings</msg>
+<status status="PASS" starttime="20230604 17:47:11.051" endtime="20230604 17:47:11.119"/>
+</kw>
+<kw name="Split String" library="String">
+<var>@{elements}</var>
+<arg>${result}</arg>
+<arg>${\n}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20230604 17:47:11.120" level="INFO">@{elements} = [ Home | Customers | Assets | Device profiles | Devices | Rule chains | Dashboards | Widgets Library | OTA updates | Entity Views | Edge instances | Edge management | Audit Logs | Api Usage | System S...</msg>
+<status status="PASS" starttime="20230604 17:47:11.120" endtime="20230604 17:47:11.120"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}">Home</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:11.121" level="INFO">Clicking element '(//span[text()="Home"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:11.121" endtime="20230604 17:47:11.202"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:11.202" endtime="20230604 17:47:11.233"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:11.244" level="INFO">Current page contains element '//h1[text()=" Home "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:11.233" endtime="20230604 17:47:11.244"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:11.202" endtime="20230604 17:47:11.244"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:11.245" endtime="20230604 17:47:11.245"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:11.245" endtime="20230604 17:47:11.245"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:11.244" endtime="20230604 17:47:11.245"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:11.245" endtime="20230604 17:47:11.245"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:11.245" endtime="20230604 17:47:11.245"/>
+</branch>
+<status status="NOT RUN" starttime="20230604 17:47:11.244" endtime="20230604 17:47:11.245"/>
+</try>
+<status status="NOT RUN" starttime="20230604 17:47:11.244" endtime="20230604 17:47:11.246"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:11.246" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:11.246" endtime="20230604 17:47:11.247"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:11.246" endtime="20230604 17:47:11.247"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:11.202" endtime="20230604 17:47:11.247"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:11.120" endtime="20230604 17:47:11.247"/>
+</iter>
+<iter>
+<var name="${element}">Customers</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:11.248" level="INFO">Clicking element '(//span[text()="Customers"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:11.248" endtime="20230604 17:47:11.632"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:11.633" endtime="20230604 17:47:11.708"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:11.812" level="INFO">Current page contains element '//h1[text()=" Customers "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:11.708" endtime="20230604 17:47:11.813"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:11.633" endtime="20230604 17:47:11.813"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:11.813" endtime="20230604 17:47:11.813"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:11.813" endtime="20230604 17:47:11.813"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:11.813" endtime="20230604 17:47:11.813"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:11.813" endtime="20230604 17:47:11.813"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:11.813" endtime="20230604 17:47:11.813"/>
+</branch>
+<status status="NOT RUN" starttime="20230604 17:47:11.813" endtime="20230604 17:47:11.813"/>
+</try>
+<status status="NOT RUN" starttime="20230604 17:47:11.813" endtime="20230604 17:47:11.813"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:11.814" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:11.814" endtime="20230604 17:47:11.814"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:11.814" endtime="20230604 17:47:11.814"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:11.632" endtime="20230604 17:47:11.814"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:11.248" endtime="20230604 17:47:11.814"/>
+</iter>
+<iter>
+<var name="${element}">Assets</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:11.815" level="INFO">Clicking element '(//span[text()="Assets"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:11.815" endtime="20230604 17:47:12.047"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:12.047" endtime="20230604 17:47:12.091"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:12.107" level="INFO">Current page contains element '//h1[text()=" Assets "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:12.091" endtime="20230604 17:47:12.107"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:12.047" endtime="20230604 17:47:12.108"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:12.108" endtime="20230604 17:47:12.108"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:12.108" endtime="20230604 17:47:12.108"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:12.108" endtime="20230604 17:47:12.109"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:12.109" endtime="20230604 17:47:12.109"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:12.109" endtime="20230604 17:47:12.109"/>
+</branch>
+<status status="NOT RUN" starttime="20230604 17:47:12.108" endtime="20230604 17:47:12.109"/>
+</try>
+<status status="NOT RUN" starttime="20230604 17:47:12.108" endtime="20230604 17:47:12.109"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:12.110" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:12.109" endtime="20230604 17:47:12.110"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:12.109" endtime="20230604 17:47:12.111"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:12.047" endtime="20230604 17:47:12.111"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:11.814" endtime="20230604 17:47:12.111"/>
+</iter>
+<iter>
+<var name="${element}">Device profiles</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:12.112" level="INFO">Clicking element '(//span[text()="Device profiles"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:12.111" endtime="20230604 17:47:12.322"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:12.322" endtime="20230604 17:47:12.384"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:12.392" level="INFO">Current page contains element '//h1[text()=" Device profiles "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:12.384" endtime="20230604 17:47:12.392"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:12.322" endtime="20230604 17:47:12.393"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:12.393" endtime="20230604 17:47:12.393"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:12.393" endtime="20230604 17:47:12.393"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:12.393" endtime="20230604 17:47:12.393"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:12.394" endtime="20230604 17:47:12.394"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:12.393" endtime="20230604 17:47:12.394"/>
+</branch>
+<status status="NOT RUN" starttime="20230604 17:47:12.393" endtime="20230604 17:47:12.394"/>
+</try>
+<status status="NOT RUN" starttime="20230604 17:47:12.393" endtime="20230604 17:47:12.394"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:12.394" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:12.394" endtime="20230604 17:47:12.395"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:12.394" endtime="20230604 17:47:12.395"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:12.322" endtime="20230604 17:47:12.395"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:12.111" endtime="20230604 17:47:12.395"/>
+</iter>
+<iter>
+<var name="${element}">Devices</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:12.396" level="INFO">Clicking element '(//span[text()="Devices"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:12.395" endtime="20230604 17:47:12.596"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:12.597" endtime="20230604 17:47:12.628"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:12.641" level="INFO">Current page contains element '//h1[text()=" Devices "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:12.628" endtime="20230604 17:47:12.641"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:12.596" endtime="20230604 17:47:12.642"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:12.642" endtime="20230604 17:47:12.642"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:12.642" endtime="20230604 17:47:12.642"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:12.642" endtime="20230604 17:47:12.642"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:12.642" endtime="20230604 17:47:12.642"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:12.642" endtime="20230604 17:47:12.642"/>
+</branch>
+<status status="NOT RUN" starttime="20230604 17:47:12.642" endtime="20230604 17:47:12.642"/>
+</try>
+<status status="NOT RUN" starttime="20230604 17:47:12.642" endtime="20230604 17:47:12.642"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:12.642" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:12.642" endtime="20230604 17:47:12.643"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:12.642" endtime="20230604 17:47:12.643"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:12.596" endtime="20230604 17:47:12.643"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:12.395" endtime="20230604 17:47:12.643"/>
+</iter>
+<iter>
+<var name="${element}">Rule chains</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:12.643" level="INFO">Clicking element '(//span[text()="Rule chains"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:12.643" endtime="20230604 17:47:12.812"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:12.813" endtime="20230604 17:47:12.846"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:12.857" level="INFO">Current page contains element '//h1[text()=" Rule chains "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:12.846" endtime="20230604 17:47:12.857"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:12.812" endtime="20230604 17:47:12.857"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:12.857" endtime="20230604 17:47:12.857"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:12.857" endtime="20230604 17:47:12.857"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:12.857" endtime="20230604 17:47:12.857"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:12.857" endtime="20230604 17:47:12.857"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:12.857" endtime="20230604 17:47:12.858"/>
+</branch>
+<status status="NOT RUN" starttime="20230604 17:47:12.857" endtime="20230604 17:47:12.858"/>
+</try>
+<status status="NOT RUN" starttime="20230604 17:47:12.857" endtime="20230604 17:47:12.858"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:12.858" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:12.858" endtime="20230604 17:47:12.858"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:12.858" endtime="20230604 17:47:12.858"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:12.812" endtime="20230604 17:47:12.858"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:12.643" endtime="20230604 17:47:12.858"/>
+</iter>
+<iter>
+<var name="${element}">Dashboards</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:12.859" level="INFO">Clicking element '(//span[text()="Dashboards"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:12.858" endtime="20230604 17:47:13.016"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:13.016" endtime="20230604 17:47:13.056"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:13.074" level="INFO">Current page contains element '//h1[text()=" Dashboards "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:13.057" endtime="20230604 17:47:13.074"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:13.016" endtime="20230604 17:47:13.074"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:13.075" endtime="20230604 17:47:13.075"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:13.075" endtime="20230604 17:47:13.075"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:13.075" endtime="20230604 17:47:13.075"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:13.075" endtime="20230604 17:47:13.075"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:13.075" endtime="20230604 17:47:13.075"/>
+</branch>
+<status status="NOT RUN" starttime="20230604 17:47:13.074" endtime="20230604 17:47:13.076"/>
+</try>
+<status status="NOT RUN" starttime="20230604 17:47:13.074" endtime="20230604 17:47:13.076"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:13.076" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:13.076" endtime="20230604 17:47:13.076"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:13.076" endtime="20230604 17:47:13.077"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:13.016" endtime="20230604 17:47:13.077"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:12.858" endtime="20230604 17:47:13.077"/>
+</iter>
+<iter>
+<var name="${element}">Widgets Library</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:13.078" level="INFO">Clicking element '(//span[text()="Widgets Library"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:13.077" endtime="20230604 17:47:13.250"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230604 17:47:18.594" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230604 17:47:18.595" level="FAIL">Element '//h1[text()=" Widgets Library "]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20230604 17:47:13.251" endtime="20230604 17:47:18.595"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:18.596" endtime="20230604 17:47:18.596"/>
+</kw>
+<status status="FAIL" starttime="20230604 17:47:13.250" endtime="20230604 17:47:18.596"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230604 17:47:23.825" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230604 17:47:23.825" level="FAIL">Element '//a[text()=" Widgets Library "]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20230604 17:47:18.596" endtime="20230604 17:47:23.825"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:23.826" endtime="20230604 17:47:23.826"/>
+</kw>
+<status status="FAIL" starttime="20230604 17:47:18.596" endtime="20230604 17:47:23.826"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<msg timestamp="20230604 17:47:23.826" level="FAIL">AssertionError</msg>
+<status status="FAIL" starttime="20230604 17:47:23.826" endtime="20230604 17:47:23.826"/>
+</kw>
+<status status="FAIL" starttime="20230604 17:47:23.826" endtime="20230604 17:47:23.827"/>
+</branch>
+<status status="FAIL" starttime="20230604 17:47:18.596" endtime="20230604 17:47:23.827"/>
+</try>
+<status status="FAIL" starttime="20230604 17:47:18.596" endtime="20230604 17:47:23.827"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:23.827" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:23.827" endtime="20230604 17:47:23.827"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:23.827" endtime="20230604 17:47:23.827"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:13.250" endtime="20230604 17:47:23.827"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:13.077" endtime="20230604 17:47:23.827"/>
+</iter>
+<iter>
+<var name="${element}">OTA updates</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:23.828" level="INFO">Clicking element '(//span[text()="OTA updates"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:23.827" endtime="20230604 17:47:24.044"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:24.044" endtime="20230604 17:47:24.085"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:24.094" level="INFO">Current page contains element '//h1[text()=" OTA updates "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:24.085" endtime="20230604 17:47:24.094"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:24.044" endtime="20230604 17:47:24.094"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:24.094" endtime="20230604 17:47:24.094"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:24.095" endtime="20230604 17:47:24.095"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:24.094" endtime="20230604 17:47:24.095"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:24.095" endtime="20230604 17:47:24.095"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:24.095" endtime="20230604 17:47:24.095"/>
+</branch>
+<status status="NOT RUN" starttime="20230604 17:47:24.094" endtime="20230604 17:47:24.095"/>
+</try>
+<status status="NOT RUN" starttime="20230604 17:47:24.094" endtime="20230604 17:47:24.095"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:24.095" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:24.095" endtime="20230604 17:47:24.096"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:24.095" endtime="20230604 17:47:24.096"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:24.044" endtime="20230604 17:47:24.096"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:23.827" endtime="20230604 17:47:24.096"/>
+</iter>
+<iter>
+<var name="${element}">Entity Views</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:24.097" level="INFO">Clicking element '(//span[text()="Entity Views"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:24.096" endtime="20230604 17:47:24.386"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:24.386" endtime="20230604 17:47:24.420"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:24.434" level="INFO">Current page contains element '//h1[text()=" Entity Views "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:24.420" endtime="20230604 17:47:24.434"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:24.386" endtime="20230604 17:47:24.434"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:24.435" endtime="20230604 17:47:24.435"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:24.435" endtime="20230604 17:47:24.435"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:24.435" endtime="20230604 17:47:24.435"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:24.435" endtime="20230604 17:47:24.435"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:24.435" endtime="20230604 17:47:24.435"/>
+</branch>
+<status status="NOT RUN" starttime="20230604 17:47:24.435" endtime="20230604 17:47:24.435"/>
+</try>
+<status status="NOT RUN" starttime="20230604 17:47:24.435" endtime="20230604 17:47:24.435"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:24.436" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:24.436" endtime="20230604 17:47:24.436"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:24.435" endtime="20230604 17:47:24.436"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:24.386" endtime="20230604 17:47:24.436"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:24.096" endtime="20230604 17:47:24.436"/>
+</iter>
+<iter>
+<var name="${element}">Edge instances</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:24.437" level="INFO">Clicking element '(//span[text()="Edge instances"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:24.436" endtime="20230604 17:47:24.644"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:24.645" endtime="20230604 17:47:24.722"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:24.737" level="INFO">Current page contains element '//h1[text()=" Edge instances "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:24.723" endtime="20230604 17:47:24.737"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:24.644" endtime="20230604 17:47:24.737"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:24.737" endtime="20230604 17:47:24.737"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:24.737" endtime="20230604 17:47:24.737"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:24.737" endtime="20230604 17:47:24.737"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:24.737" endtime="20230604 17:47:24.737"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:24.737" endtime="20230604 17:47:24.737"/>
+</branch>
+<status status="NOT RUN" starttime="20230604 17:47:24.737" endtime="20230604 17:47:24.737"/>
+</try>
+<status status="NOT RUN" starttime="20230604 17:47:24.737" endtime="20230604 17:47:24.737"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:24.738" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:24.738" endtime="20230604 17:47:24.738"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:24.738" endtime="20230604 17:47:24.738"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:24.644" endtime="20230604 17:47:24.738"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:24.436" endtime="20230604 17:47:24.738"/>
+</iter>
+<iter>
+<var name="${element}">Edge management</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:24.739" level="INFO">Clicking element '(//span[text()="Edge management"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:24.738" endtime="20230604 17:47:24.990"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230604 17:47:30.297" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230604 17:47:30.297" level="FAIL">Element '//h1[text()=" Edge management "]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20230604 17:47:24.991" endtime="20230604 17:47:30.297"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:30.298" endtime="20230604 17:47:30.298"/>
+</kw>
+<status status="FAIL" starttime="20230604 17:47:24.990" endtime="20230604 17:47:30.298"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:30.298" endtime="20230604 17:47:30.327"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:30.339" level="INFO">Current page contains element '//a[text()=" Edge management "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:30.328" endtime="20230604 17:47:30.339"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:30.298" endtime="20230604 17:47:30.339"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:30.339" endtime="20230604 17:47:30.339"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:30.339" endtime="20230604 17:47:30.339"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:30.298" endtime="20230604 17:47:30.339"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:30.298" endtime="20230604 17:47:30.339"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:30.340" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:30.340" endtime="20230604 17:47:30.340"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:30.339" endtime="20230604 17:47:30.340"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:24.990" endtime="20230604 17:47:30.340"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:24.738" endtime="20230604 17:47:30.340"/>
+</iter>
+<iter>
+<var name="${element}">Audit Logs</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:30.342" level="INFO">Clicking element '(//span[text()="Audit Logs"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:30.341" endtime="20230604 17:47:30.492"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:30.492" endtime="20230604 17:47:30.519"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:30.525" level="INFO">Current page contains element '//h1[text()=" Audit Logs "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:30.519" endtime="20230604 17:47:30.525"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:30.492" endtime="20230604 17:47:30.525"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:30.526" endtime="20230604 17:47:30.526"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:30.526" endtime="20230604 17:47:30.526"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:30.526" endtime="20230604 17:47:30.526"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:30.526" endtime="20230604 17:47:30.527"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:30.526" endtime="20230604 17:47:30.527"/>
+</branch>
+<status status="NOT RUN" starttime="20230604 17:47:30.526" endtime="20230604 17:47:30.527"/>
+</try>
+<status status="NOT RUN" starttime="20230604 17:47:30.526" endtime="20230604 17:47:30.527"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:30.527" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:30.527" endtime="20230604 17:47:30.527"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:30.527" endtime="20230604 17:47:30.527"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:30.492" endtime="20230604 17:47:30.527"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:30.341" endtime="20230604 17:47:30.527"/>
+</iter>
+<iter>
+<var name="${element}">Api Usage</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:30.528" level="INFO">Clicking element '(//span[text()="Api Usage"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:30.528" endtime="20230604 17:47:30.773"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:30.773" endtime="20230604 17:47:30.851"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:30.859" level="INFO">Current page contains element '//h1[text()=" Api Usage "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:30.851" endtime="20230604 17:47:30.859"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:30.773" endtime="20230604 17:47:30.860"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:30.860" endtime="20230604 17:47:30.860"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:30.860" endtime="20230604 17:47:30.860"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:30.860" endtime="20230604 17:47:30.860"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:30.860" endtime="20230604 17:47:30.861"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:30.860" endtime="20230604 17:47:30.861"/>
+</branch>
+<status status="NOT RUN" starttime="20230604 17:47:30.860" endtime="20230604 17:47:30.861"/>
+</try>
+<status status="NOT RUN" starttime="20230604 17:47:30.860" endtime="20230604 17:47:30.861"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:30.861" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:30.861" endtime="20230604 17:47:30.862"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:30.861" endtime="20230604 17:47:30.862"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:30.773" endtime="20230604 17:47:30.862"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:30.528" endtime="20230604 17:47:30.862"/>
+</iter>
+<iter>
+<var name="${element}">System Settings</var>
+<kw name="Click Element" library="Selenium2Library">
+<arg>(//span[text()="${element}"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230604 17:47:30.863" level="INFO">Clicking element '(//span[text()="System Settings"])[1]'.</msg>
+<status status="PASS" starttime="20230604 17:47:30.862" endtime="20230604 17:47:30.964"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20230604 17:47:36.279" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230604 17:47:36.280" level="FAIL">Element '//h1[text()=" System Settings "]' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20230604 17:47:30.964" endtime="20230604 17:47:36.280"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//h1[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:36.281" endtime="20230604 17:47:36.281"/>
+</kw>
+<status status="FAIL" starttime="20230604 17:47:30.964" endtime="20230604 17:47:36.281"/>
+</branch>
+<branch type="EXCEPT">
+<try>
+<branch type="TRY">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230604 17:47:36.281" endtime="20230604 17:47:36.334"/>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<arg>//a[text()=" ${element} "]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230604 17:47:36.340" level="INFO">Current page contains element '//a[text()=" System Settings "]'.</msg>
+<status status="PASS" starttime="20230604 17:47:36.334" endtime="20230604 17:47:36.340"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:36.281" endtime="20230604 17:47:36.340"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Fail" library="BuiltIn">
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20230604 17:47:36.341" endtime="20230604 17:47:36.341"/>
+</kw>
+<status status="NOT RUN" starttime="20230604 17:47:36.340" endtime="20230604 17:47:36.341"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:36.281" endtime="20230604 17:47:36.341"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:36.281" endtime="20230604 17:47:36.341"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Continue For Loop" library="BuiltIn">
+<doc>Skips the current FOR loop iteration and continues from the next.</doc>
+<msg timestamp="20230604 17:47:36.341" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20230604 17:47:36.341" endtime="20230604 17:47:36.341"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:36.341" endtime="20230604 17:47:36.341"/>
+</branch>
+<status status="PASS" starttime="20230604 17:47:30.964" endtime="20230604 17:47:36.341"/>
+</try>
+<status status="PASS" starttime="20230604 17:47:30.862" endtime="20230604 17:47:36.341"/>
+</iter>
+<status status="PASS" starttime="20230604 17:47:11.120" endtime="20230604 17:47:36.341"/>
+</for>
+<status status="PASS" starttime="20230604 17:47:00.997" endtime="20230604 17:47:36.341"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:00.996" endtime="20230604 17:47:36.341"/>
+</test>
+<kw name="Closing the browser" library="inital_setup" type="TEARDOWN">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230604 17:47:36.342" endtime="20230604 17:47:36.411"/>
+</kw>
+<status status="PASS" starttime="20230604 17:47:36.342" endtime="20230604 17:47:36.412"/>
+</kw>
+<status status="PASS" starttime="20230604 17:46:42.257" endtime="20230604 17:47:36.412"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Main file">Main file</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
