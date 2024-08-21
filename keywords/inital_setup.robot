@@ -2,7 +2,7 @@
 Library     Selenium2Library
 Library    XML
 Library    Dialogs
-Library    /home/vvdn13302/Desktop/VVDN_Icon/Test_data/setup.py
+Library    ../Test_data/setup.py
 Resource    ../settings/Resources_file.robot
 
 
