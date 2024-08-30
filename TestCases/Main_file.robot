@@ -6,7 +6,7 @@ Suite Setup         Open My Browser
 Suite Teardown      Closing the browser
 # Test Setup    Login_to_dashboard
 
-*** Test Case ***
+*** Test Cases ***
 
 Tc_1 Forgot password test
     Set Selenium Speed    1
